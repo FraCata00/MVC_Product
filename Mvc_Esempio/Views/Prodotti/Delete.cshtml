@@ -1,0 +1,72 @@
+﻿@model Mvc_Esempio.Models.Prodotto
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Prodotto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Denominazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Denominazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrizione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrizione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezzo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezzo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Giacenza)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Giacenza)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Visibile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Visibile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nuovo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nuovo)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("EliminaProdotto", "Prodotti", new { id = Model.Codice })) {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
